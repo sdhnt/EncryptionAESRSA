@@ -23,14 +23,18 @@ public class AESEncryptionDemo {
 
         // Alice performs encryption using the shared key maintained by herself
         SealedObject cipherObject = alice.encrypt(plainText, aliceKey);
-		
+		long time1 = System.currentTimeMillis();
         // Bob performs decryption using the shared key maintained by himself
         String decryptedText = (String) bob.decrypt(cipherObject, bobKey);
 		long endTime = System.currentTimeMillis();
 		long timeNeeded = endTime - startTime;
+		long timegen=(time1-startTime);
+		long timdec=endTime-time1;
         System.out.println("Original Text:" + plainText);
         System.out.println("Decrypted Text:" + decryptedText);
-		System.out.println("Total Time Spent for Encryption and Decryption: " + timeNeeded);
+		System.out.println("Total Time Spent for Encryption: " + timegen);
+		System.out.println("Total Time Spent for Decryption: " + timdec);
+		System.out.println("Total Time Spent in Total for both: " + timeNeeded);
     }
 
 }
