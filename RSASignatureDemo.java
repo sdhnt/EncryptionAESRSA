@@ -25,7 +25,7 @@ public class RSASignatureDemo {
 		long endTime = System.currentTimeMillis();
 		
 		long timeNeeded = endTime - startTime;
-		long timegen= time1 - time2;
+		long timegen= time1 - startTime;
 		long timeveri=endTime - time2;
         if (verifyResult) {
             System.out.println("Bob has verified the signed object.");
